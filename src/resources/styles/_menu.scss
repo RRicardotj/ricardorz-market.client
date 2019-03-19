@@ -1,0 +1,22 @@
+// Flat menu
+.flat-menu {
+  border: none;
+  background: white;
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2) !important;
+  &.ui-menu,
+  .ui-menu .ui-menu-child {
+    padding: 0px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    & .ui-menuitem-link {
+      color: $menuItemTextColor !important;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 13px;
+      padding: 10px;
+      &:hover {
+        border-radius: 0px !important;
+        background: $grayHoverColor !important;
+      }
+    }
+  }
+}

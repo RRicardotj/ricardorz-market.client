@@ -1,0 +1,37 @@
+// Flat Tab styles
+.flat-tab {
+  & .ui-tabview-panels {
+    & .ui-tabview-panel {
+      padding: 0px !important;
+    }
+  }
+  &.ui-tabview.ui-widget.ui-widget-content.ui-corner-all.ui-tabview-top {
+    border-radius: 0px !important;
+    border-bottom: 1px solid darken($grayColor, 10);
+    padding: 0px !important;
+    & ul.ui-tabview-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-corner-all {
+      border: none !important;
+      & li.ui-state-default.ui-corner-top.ui-tabview-selected.ui-state-active {
+        border: none;
+        border-bottom: 3px solid $lightenPrimaryColor;
+        font-weight: bolder;
+        & a {
+          font-family: $defaultFont;
+          color: $darkGrayColor;
+          font-size: 0.9em;
+          padding: 15px;
+        }
+      }
+      & li.ui-state-default.ui-corner-top {
+        background: none !important;
+        border: none;
+        & a {
+          font-family: $defaultFont;
+          color: $disabledGray;
+          font-size: 0.9em;
+          padding: 15px;
+        }
+      }
+    }
+  }
+}

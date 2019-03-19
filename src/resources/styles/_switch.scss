@@ -1,0 +1,22 @@
+
+// Flat Switch
+.flat-switch {
+  & .ui-inputswitch-on {
+    background: $lightenPrimaryColor !important;
+    font-size: 0.9em !important;
+    font-weight: 100 !important;
+    & .ui-inputswitch-onlabel {
+      margin-top: 1px;
+      font-family: $defaultFont !important;
+    }
+  }
+  & .ui-inputswitch-off {
+    font-size: 0.9em !important;
+    font-weight: 100 !important;
+    color: $darkGrayColor !important;
+    & .ui-inputswitch-offlabel {
+      margin-top: 1px;
+      font-family: $defaultFont !important;
+    }
+  }
+}

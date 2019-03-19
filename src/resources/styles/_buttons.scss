@@ -1,0 +1,166 @@
+// Primary Button
+.primary-button {
+  &.ui-button {
+    border: 1px solid $primaryColor !important;
+    background: $primaryColor !important;
+    &:enabled:hover {
+      border: 1px solid lighten($primaryColor, 10%) !important;
+      background: lighten($primaryColor, 10%) !important;
+    }
+  }
+}
+
+// Primary Lighten Button
+.primary-button-lighten {
+  &.ui-button {
+    border: 1px solid $lightenPrimaryColor !important;
+    background: $lightenPrimaryColor !important;
+    &:enabled:hover {
+      border: 1px solid lighten($lightenPrimaryColor, 10%) !important;
+      background: lighten($lightenPrimaryColor, 10%) !important;
+    }
+  }
+  &.modal-button {
+    padding: 5px !important;
+    min-width: 90px;
+  }
+  &.flat-button {
+    border: none !important;
+    background: none !important;
+    color: $lightenPrimaryColor !important;
+    &:enabled:hover {
+      border: none !important;
+      background: $flatGrayColor !important;
+    }
+  }
+}
+
+// Secondary Button
+.secondary-button {
+  &.ui-button {
+    border: 1px solid $secondaryColor !important;
+    background: $secondaryColor !important;
+    &:enabled:hover {
+      border: 1px solid lighten($secondaryColor, 10%) !important;
+      background: lighten($secondaryColor, 10%) !important;
+    }
+  }
+  &.modal-button {
+    padding: 5px !important;
+    min-width: 90px;
+  }
+  &.flat-button {
+    border: none !important;
+    background: none !important;
+    color: $secondaryColor !important;
+    &:enabled:hover {
+      border: none !important;
+      background: $flatGrayColor !important;
+    }
+  }
+}
+
+// Success Button
+.success-button {
+  &.ui-button {
+    border: 1px solid $successColor !important;
+    background: $successColor !important;
+    &:enabled:hover {
+      border: 1px solid lighten($successColor, 10%) !important;
+      background: lighten($successColor, 10%) !important;
+    }
+  }
+  &.modal-button {
+    padding: 5px !important;
+    min-width: 90px;
+  }
+  &.flat-button {
+    border: none !important;
+    background: none !important;
+    color: $successColor !important;
+    &:enabled:hover {
+      border: none !important;
+      background: $flatGrayColor !important;
+    }
+  }
+}
+
+
+// Right button menu style
+.menu-primary-button {
+  width: 100%;
+  border-radius: 0;
+  margin-right: 0px !important;
+  &.ui-button {
+    border: none !important;
+    background: $grayHighlightColor !important;
+    color: $lightenPrimaryColor;
+    &:enabled:hover {
+      border: none !important;
+      background: darken($grayHighlightColor, 10%) !important;
+    }
+    &:enabled:active {
+      border: none !important;
+      background: darken($grayHighlightColor, 10%) !important;
+    }
+    &:enabled:focus {
+      border: none !important;
+      background: darken($grayHighlightColor, 10%) !important;
+    }
+  }
+}
+
+.link-button {
+  &.primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .75em;
+    background: $lightenPrimaryColor;
+    color: white;
+    &:hover {
+      background: lighten($lightenPrimaryColor, 10%)
+    }
+  }
+  &.full-width {
+    width: 100%;
+  }
+  &-icon {
+    margin-right: 20px;
+  }
+  &.small {
+    display: inline-flex !important;
+    padding: 0.55em !important;
+    font-size: 0.8em !important;
+    & .link-button-icon {
+      margin-right: 10px;
+    }
+  }
+}
+
+.button-block {
+  padding: 10px;
+  font-size: 1.1em;
+}
+
+.no-round-corners {
+  border-radius: 0 !important;
+}
+
+.button-xs {
+  font-size: $font-xs;
+  padding: $xs;
+}
+.button-sm {
+  font-size: $font-sm;
+  padding: $sm;
+}
+.button-lg {
+  font-size: $font-lg;
+  padding: $lg;
+}
+.button-xl {
+  font-size: $font-xl;
+  padding: $xl;
+}
+

@@ -1,0 +1,45 @@
+// Flat modal
+.flat-modal {
+  border-radius: 10px !important;
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2) !important;
+  & .ui-dialog-footer {
+    border: none !important;
+    border-top: 1px solid $grayLinesColor !important;
+    border-radius: 0 0 10px 10px !important;
+  }
+  &.ui-dialog {
+    & .ui-dialog-titlebar {
+      border-top-left-radius: 10px !important;
+      border-top-right-radius: 10px !important;
+      background: white !important;
+      border-bottom: 1px solid $grayLinesColor;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 20px;
+      & .ui-dialog-title {
+        font-size: 1.1em;
+        color: #599fe4;
+      }
+      &::before {
+        content: " " !important;
+        display: none !important;
+      }
+      &::after {
+        content: " " !important;
+        display: none !important;
+      }
+    }
+    & .ui-dialog-titlebar-icon {
+      color: $darkGrayColor !important;
+      border: none !important;
+      &:hover {
+        border: none !important;
+        background: none !important;
+        color: #57595a !important;
+      }
+    }
+  }
+}

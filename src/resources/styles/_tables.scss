@@ -1,0 +1,31 @@
+.flat-table {
+  width: 100%;
+  border-collapse: collapse;
+  & thead {
+    & tr {
+      & th {
+        padding: 10px;
+        color: $darkGrayColor;
+      }
+    }
+  }
+  & tbody {
+    &:before {
+      content: "-";
+      display: block;
+      line-height: 1.5em;
+      color: transparent;
+    }
+    & tr {
+      background: $grayColor;
+      border-bottom: 10px solid white;
+      & td {
+        padding: 10px;
+        color: $tableText;
+      }
+      &:hover {
+        background: $grayHoverColor;
+      }
+    }
+  }
+}

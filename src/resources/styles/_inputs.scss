@@ -1,0 +1,51 @@
+// Text input flat style
+.ui-inputtext {
+  color: #555555 !important;
+  border-radius: 0 !important;
+  border: none !important;
+  border-bottom: 1px solid #c6c6c6 !important;
+  padding-left: 0 !important;
+  &:focus {
+    border-radius: 0 !important;
+    border: none !important;
+    border-bottom: 1px solid #01437b !important;
+    box-shadow: none !important;
+  }
+}
+
+.ui-float-label {
+  input:focus~label {
+    color: #01437b !important;
+  }
+  label {
+    left: 0;
+    font-size: 0.7em;
+    margin-top: -.9em !important;
+  }
+}
+
+.input-error {
+  &.ui-inputtext {
+    border-radius: 0 !important;
+    border: none !important;
+    border-bottom: 1px solid $errorColor !important;
+    &:focus {
+      border-radius: 0 !important;
+      border: none !important;
+      border-bottom: 1px solid $errorColor !important;
+      box-shadow: none !important;
+    }
+  }
+  &+label {
+    color: $errorColor !important;
+  }
+}
+
+.ui-float-label input.input-error:focus~label {
+  color: $errorColor !important;
+}
+
+.ui-state-disabled+label {
+  color: #c6c6c6;
+}
+

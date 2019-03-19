@@ -1,0 +1,11 @@
+// Sidebar
+.ui-sidebar {
+  padding: 0 !important;
+  @include box-shadow(0px 3px 10px rgba(0, 0, 0, 0.16));
+  border: none !important;
+  overflow: auto;
+}
+
+.ui-sidebar .ui-sidebar-close {
+  display: none !important;
+}

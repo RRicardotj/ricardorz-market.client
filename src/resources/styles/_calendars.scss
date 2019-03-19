@@ -1,0 +1,14 @@
+.flat-calendar {
+  &.ui-calendar {
+    &.full-width {
+      & .ui-inputtext {
+        width: 90%;
+        margin-right: 2%;
+      }
+      & .ui-button {
+        border-radius: 0 !important;
+        border: none !important;
+      }
+    }
+  }
+}
