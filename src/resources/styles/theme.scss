@@ -16,11 +16,11 @@
 /* App global styles */
 
 .primaryFontColor {
-  color: $primaryColor
+  color: $primaryColor !important;
 }
 
 .primaryFontColorLighten {
-  color: $lightenPrimaryColor
+  color: $lightenPrimaryColor !important;
 }
 
 .app-error-span {

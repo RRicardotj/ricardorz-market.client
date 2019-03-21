@@ -13,9 +13,14 @@ import CartContext from './CartContext';
 
 */
 export default class GlobalContext extends Component {
-  state = {
-    cart: [],
-    cartId: null,
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      cart: [],
+      cartId: null,
+      isAuthenticated: props.isAuthenticated,
+    };
   }
 
   setCart(cart, cartId) {
@@ -34,12 +39,17 @@ export default class GlobalContext extends Component {
     this.setState({ cart });
   }
 
+  clearContex = ({ cart, cartId, isAuthenticated }) => {
+    this.setState({ cart, cartId, isAuthenticated });
+  }
+
   render() {
     return (
       <CartContext.Provider
         value={{
           cart: this.state.cart,
           cartId: this.state.cartId,
+          isAuthenticated: this.state.isAuthenticated,
           addToCart: this.addToCart,
           setCart: this.setCart,
           removeFromCart: this.removeFromCart,

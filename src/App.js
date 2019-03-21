@@ -60,7 +60,7 @@ class App extends Component {
       );
     }
     return (
-      <Scenes />
+      <Scenes isAuthenticated={this.state.isAuthenticated} />
     );
   }
 }
