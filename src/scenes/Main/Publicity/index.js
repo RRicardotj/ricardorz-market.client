@@ -39,7 +39,7 @@ class Publicity extends Component {
           </div>
           <div className="Publicity__corousel-item" >
             <div className="Publicity__corousel-item--message">
-              <p>Enjoy the art of give gifts to your loved ones</p>
+              <p>Enjoy the art of giving gifts to your loved ones</p>
             </div>
             <img src={`${process.env.REACT_APP_API}/banners_image/gift.jpg`} alt="send gifts" />
           </div>
