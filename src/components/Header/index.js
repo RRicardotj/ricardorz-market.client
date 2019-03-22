@@ -72,12 +72,12 @@ class Header extends Component {
             />
             <div className="Header-search-hidden" >
               <Link to="/search">
-                <Icon type="search" style={{ fontSize: '32px', color: '#DA674A' }} />
+                <Icon type="search" style={{ fontSize: '32px', color: '#FFAA67' }} />
               </Link>
             </div>
             <Link to="/cart" className="Header--top-cart-link">
               <Badge count={this.state.cart.length}>
-                <Icon type="shopping-cart" style={{ fontSize: '32px', color: '#DA674A' }} />
+                <Icon type="shopping-cart" style={{ fontSize: '32px', color: '#FFAA67' }} />
               </Badge>
             </Link>
             <Button

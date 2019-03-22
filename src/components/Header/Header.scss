@@ -4,7 +4,7 @@
 .Header {
   width: 100%;
   height: 7.5rem;
-  background-color: $secondaryColor;
+  background-color: $primaryColor;
   display: flex;
   flex-direction: column;
 
@@ -53,8 +53,8 @@
         &:link,
         &:visited,
         &::selection {
-          background-color: $lightenPrimaryColor !important;
-          border-color: $lightenPrimaryColor !important;
+          background-color: $secondaryColor !important;
+          border-color: $secondaryColor !important;
         }
 
         @media (max-width: 480px) {

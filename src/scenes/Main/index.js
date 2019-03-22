@@ -1,22 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import { Layout } from 'antd';
+// import { Layout, Divider } from 'antd';
 
 import Header from 'components/Header';
+import Publicity from './Publicity';
 
 import './Main.scss';
 
-const {
-  Footer, Content,
-} = Layout;
-
 const Main = () =>
   (
-    <Layout>
+    <div className="Main">
       <Header />
-      <Content>Content</Content>
-      <Footer>Footer</Footer>
-    </Layout>
+      <Publicity />
+    </div>
   );
 
 export default Main;

@@ -4,8 +4,8 @@ const endpoint = 'department';
 
 export default {
   /**
-    * Check token
-    * @return {Http} GET to /auth/check
+    * get deparments with their categories
+    * @return {Http} GET to /department
     */
   getAllDepartmentsWithCategories() {
     return Http.get(`${endpoint}`);

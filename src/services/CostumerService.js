@@ -5,7 +5,7 @@ const endpoint = 'customer';
 export default {
   /**
     * Check token
-    * @return {Http} GET to /auth/check
+    * @return {Http} GET to /customer/check
     */
   check() {
     return Http.get(`${endpoint}/check`);
