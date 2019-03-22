@@ -1,3 +1,25 @@
+@import '../../resources/styles/_variables.scss';
+
 .Footer {
+  height: 100px;
+  background-color: $darkGrayColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $secondaryColor;
   
+  p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+  }
+
+  a,
+  a:link,
+  a:visited {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+  }
 }
