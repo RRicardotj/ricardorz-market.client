@@ -46,10 +46,6 @@ class Header extends Component {
   }
 
   render() {
-    const antButtonStyles = {
-      color: '#DA674A',
-    };
-
     return (
       <div
         className="Header"
@@ -81,13 +77,13 @@ class Header extends Component {
               </Badge>
             </Link>
             <Button
-              style={antButtonStyles}
+              // style={antButtonStyles}
               disabled={this.state.isAuthenticated}
               onClick={this.goToSignUp}
             >
               <span>Sign Up</span>
             </Button>
-            <Button style={antButtonStyles} onClick={this.goToSignIn}>
+            <Button onClick={this.goToSignIn}>
               <span>
                 {
                   this.state.isAuthenticated ? 'Logout' : 'Sign In'

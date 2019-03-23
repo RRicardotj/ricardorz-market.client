@@ -1,0 +1,28 @@
+@import '../../resources/styles/_variables.scss';
+
+.Search {
+  width: 100%;
+
+  .ant-divider.ant-divider-horizontal {
+    margin: 10px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &--title {
+      color: $primaryColor;
+      font-weight: 200;
+      text-align: center;
+    }
+
+    &--actions {
+      width: 90%;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+  }
+}

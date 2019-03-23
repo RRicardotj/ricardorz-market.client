@@ -58,10 +58,18 @@
         width: 100%;
       }
 
-      &-ant-btn {
-        background-color: $primaryColor !important;
-        border-color: $primaryColor !important;
+      .ant-btn {
+        background-color: $lightenPrimaryColor !important;
+        border-color: $lightenPrimaryColor !important;
         color: $primaryColor;
+        font-weight: 400 !important;
+        font-size: 1.2rem;
+
+        &:hover {
+          background-color: $primaryColor !important;
+          border-color: $lightenPrimaryColor !important;
+          color: $lightenPrimaryColor;
+        }
       }
 
       .ant-input-search-button, .ant-input-affix-wrapper {

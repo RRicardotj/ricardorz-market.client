@@ -2,15 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import GlobalContext from 'Context/GlobalContext';
 import Main from './Main';
-
+import ProductSearch from './ProductSearch';
 // const Main = () => (<div><h1>Main</h1></div>);
 
-const ProductSearch = (props) => {
-  const { match } = props;
-  return (
-    <div><h1>{`You are searching: ${match.params.value}`}</h1></div>
-  );
-};
 
 const Search = () => (<div><h1>Search global</h1></div>);
 
