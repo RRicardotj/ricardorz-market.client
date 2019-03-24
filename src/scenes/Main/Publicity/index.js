@@ -16,7 +16,6 @@ class Publicity extends Component {
   componentDidMount() {
     ProductService.getProductsMain()
       .then(({ data }) => {
-        console.log(data);
         this.setState({ products: data });
       });
   }
@@ -51,7 +50,7 @@ class Publicity extends Component {
         <div className="Publicity__products">
           {
             this.state.products.map(product => (
-              <div className="Publicity__products--item">
+              <div className="Publicity__products--item" key={product.product_id} >
                 <Card
                   style={{ width: 240, marginRight: 'auto', marginLeft: 'auto' }}
                   cover={<img src={product.image} alt={product.name} />}

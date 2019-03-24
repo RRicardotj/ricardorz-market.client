@@ -3,13 +3,13 @@ import React, { Component } from 'react';
 import CartContext from 'Context/CartContext';
 import Search from 'components/Search';
 import Header from 'components/HeaderBasic';
-import ProductService from 'services/ProductService';
+
 
 import { withRouter } from 'react-router-dom';
 
-import './ProductSearch.scss';
+import './CategorySearch.scss';
 
-class ProductSearch extends Component {
+class CategorySearch extends Component {
   static contextType = CartContext;
 
   state = {
@@ -28,7 +28,7 @@ class ProductSearch extends Component {
   }
 
   setTitle = (value) => {
-    const title = value ? `Searching products by: ${value}` : 'Write the product you want to find';
+    const title = value ? `Searching products by: ${value}` : 'Search by category';
     this.setState({ title });
   }
 
@@ -41,21 +41,7 @@ class ProductSearch extends Component {
   }
 
   search = (value, pageQuery = 1) => {
-    ProductService.search({ name: value, page: pageQuery })
-      .then(({ data }) => {
-        const {
-          rows, page, totalPages, total,
-        } = data;
-
-        this.setState({
-          items: rows,
-          currentPage: page,
-          totalPages,
-          total,
-          searchBy: value,
-        });
-        this.setTitle(value);
-      });
+    console.log(value, pageQuery);
   }
 
 
@@ -64,8 +50,8 @@ class ProductSearch extends Component {
       title, items, total, totalPages, currentPage,
     } = this.state;
     return (
-      <div className="ProductSearch">
-        <Header isSearch search={value => (this.search(value))} />
+      <div className="CategorySearch">
+        <Header isCategorySearch search={value => (this.search(value))} />
         <Search
           title={title}
           items={items}
@@ -80,4 +66,4 @@ class ProductSearch extends Component {
   }
 }
 
-export default withRouter(ProductSearch);
+export default withRouter(CategorySearch);
