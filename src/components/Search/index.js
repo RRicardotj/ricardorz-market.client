@@ -34,18 +34,18 @@ const Search = (props) => {
 
   const data = !items || items.length === 0 ? [] : items.map((item) => {
     const {
-      product_id, // eslint-disable-line
+      productId,
       name,
       description,
       price,
-      discounted_price, // eslint-disable-line
+      discountedPrice,
       thumbnail,
     } = item;
 
-    const p = Number(price) > Number(discounted_price) ? Number(price) : Number(discounted_price);
+    const p = Number(price) > Number(discountedPrice) ? Number(discountedPrice) : Number(price);
 
     return {
-      key: product_id, name, description, thumbnail, price: p,
+      key: productId, name, description, thumbnail, price: p,
     };
   });
 
