@@ -11,7 +11,8 @@
     padding-top: .5rem;
     padding-bottom: .5rem;
     width: 40%;
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
 
     .ant-btn {
       background-color: $lightenPrimaryColor !important;
@@ -19,6 +20,7 @@
       color: $primaryColor;
       font-weight: 400 !important;
       font-size: 1.2rem;
+      margin-left: 1.5rem;
   
       &:hover {
         background-color: $primaryColor !important;
@@ -30,5 +32,13 @@
 
   &--search {
     width: 40%;
+  }
+
+  &--bottom {
+    height: 35%;
+
+    @media (max-width: 400px) {
+      text-align: center;
+    }
   }
 }

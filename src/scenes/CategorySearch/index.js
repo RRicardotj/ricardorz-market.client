@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import CartContext from 'Context/CartContext';
 import Search from 'components/Search';
 import Header from 'components/HeaderBasic';
-
+import CategoryService from 'services/CategoryService';
 
 import { withRouter } from 'react-router-dom';
 
@@ -22,13 +22,13 @@ class CategorySearch extends Component {
   }
 
   componentDidMount() {
-    const { value } = this.props.match.params;
-    this.setTitle(value);
-    this.search(value);
+    const { categoryId } = this.props.match.params;
+
+    this.search(categoryId);
   }
 
   setTitle = (value) => {
-    const title = value ? `Searching products by: ${value}` : 'Search by category';
+    const title = value ? `Searching products by: ${value} category` : 'Search by category';
     this.setState({ title });
   }
 
@@ -40,8 +40,22 @@ class CategorySearch extends Component {
     console.log(product);
   }
 
-  search = (value, pageQuery = 1) => {
-    console.log(value, pageQuery);
+  search = (categoryId, pageQuery = 1) => {
+    CategoryService.getAllProductsByCategoryId(categoryId, pageQuery)
+      .then(({ data }) => {
+        const {
+          rows, page, totalPages, total, categoryName,
+        } = data;
+
+        this.setState({
+          items: rows,
+          currentPage: page,
+          totalPages,
+          total,
+          searchBy: categoryId,
+        });
+        this.setTitle(categoryName);
+      });
   }
 
 
