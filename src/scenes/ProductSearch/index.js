@@ -37,7 +37,7 @@ class ProductSearch extends Component {
   }
 
   addToCart = (product) => {
-    console.log(product);
+    this.context.addToCart(product, {});
   }
 
   search = (value, pageQuery = 1) => {

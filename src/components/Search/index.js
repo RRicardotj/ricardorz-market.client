@@ -14,7 +14,7 @@ const Search = (props) => {
     currentPage,
   } = props;
 
-  const addToCart = product => (console.log('ADD TO CART: ', product));
+  const addToCart = product => (props.addToCart(product));
 
   const changePage = (page) => {
     if (page <= totalPages) {
@@ -28,7 +28,7 @@ const Search = (props) => {
     },
     { title: 'Product Name', dataIndex: 'name', key: 'name' },
     {
-      title: '', align: 'center', dataIndex: '', key: 'x', render: product => <Button onChange={() => { addToCart(product); }}>Add to cart</Button>,
+      title: '', align: 'center', dataIndex: '', key: 'x', render: product => <Button onClick={() => addToCart(product.key)}>Add to cart</Button>,
     },
   ];
 

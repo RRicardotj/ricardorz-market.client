@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import CartContext from './CartContext';
+
+import CartService from 'services/CartService';
 /*
   cartItem example = {
     item_id,
@@ -17,37 +19,58 @@ export default class GlobalContext extends Component {
     super(props);
 
     this.state = {
-      cart: [],
+      shoppingCart: [],
       cartId: null,
       isAuthenticated: props.isAuthenticated,
     };
   }
 
-  setCart(cart, cartId) {
-    this.setState({ cart, cartId });
+  componentDidMount() {
+    if (localStorage.cartId) {
+      CartService.getShoppingcartByCartId(localStorage.cartId)
+        .then(({ data }) => {
+          const { cartId, shoppingCart } = data;
+          localStorage.setItem('cartId', cartId);
+
+          this.setCart(shoppingCart, cartId);
+        }).catch(() => {
+          this.clearContex({ shoppingCart: [], cartId: null });
+        });
+    }
   }
 
-  addToCart = (product) => {
-    const cart = [...this.state.cart];
+  setCart = (shoppingCart, cartId) => {
+    if (!cartId) {
+      localStorage.removeItem('cartId', cartId);
+    } else {
+      localStorage.setItem('cartId', cartId);
+    }
+    this.setState({ shoppingCart, cartId });
+  }
 
-    cart.push(product);
-    this.setState({ cart });
+  addToCart = (product, { quantity, attributes }) => {
+    CartService.addProduct(product, { quantity, attributes }, this.state.cartId)
+      .then(({ data }) => {
+        this.setCart(data.shoppingCart, data.cartId);
+      }).catch(() => (this.setCart([], null)));
   }
 
   removeFromCart = (productId) => {
-    const cart = this.state.cart.filter(product => (product.product_id !== productId));
-    this.setState({ cart });
+    const shoppingCart = this.state.shoppingCart
+      .filter(product => (product.product_id !== productId));
+    this.setState({ shoppingCart });
   }
 
-  clearContex = ({ cart, cartId, isAuthenticated }) => {
-    this.setState({ cart, cartId, isAuthenticated });
+  clearContex = ({ shoppingCart, cartId, isAuthenticated }) => {
+    this.setState({ shoppingCart, cartId, isAuthenticated });
   }
 
   render() {
+    console.log('Render gContext', this.state.shoppingCart);
     return (
       <CartContext.Provider
         value={{
-          cart: this.state.cart,
+          shoppingCart: this.state.shoppingCart,
           cartId: this.state.cartId,
           isAuthenticated: this.state.isAuthenticated,
           addToCart: this.addToCart,

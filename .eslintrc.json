@@ -8,7 +8,8 @@
       "extensions": [".js", ".jsx"]
     }],
     "react/prop-types": [0, {}],
-    "jsx-a11y/anchor-is-valid": 0
+    "jsx-a11y/anchor-is-valid": 0,
+    "no-param-reassign": 0
   },
   "settings": {
     "import/resolver": {

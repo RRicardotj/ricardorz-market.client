@@ -5,7 +5,6 @@ import Search from 'components/Search';
 import Header from 'components/HeaderBasic';
 import CategoryService from 'services/CategoryService';
 
-import { withRouter } from 'react-router-dom';
 
 import './CategorySearch.scss';
 
@@ -37,7 +36,7 @@ class CategorySearch extends Component {
   }
 
   addToCart = (product) => {
-    console.log(product);
+    this.context.addToCart(product, {});
   }
 
   search = (categoryId, pageQuery = 1) => {
@@ -80,4 +79,4 @@ class CategorySearch extends Component {
   }
 }
 
-export default withRouter(CategorySearch);
+export default CategorySearch;
