@@ -1,10 +1,20 @@
+# ricardorz-market.client
+
+This project was builded like a challenge for apply in Turing enterprise like full stack developer
+While I develop this project I was in Venezuela and currently services like electricity and internet conextion were failed, thats because this project it's not totaly ended yet.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Get Started
+Clone the project in a local folder
+Install dependencies with `npm` or `yarn` running `npm install` or `yarn` in your terminal.
+Next create a .env in the root of project folder and copy the content of .env.example in .env file and write your custom configuration parameters
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm start` or `yarn start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -12,12 +22,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
+### `npm run build` or `yarn build`
 
 Builds the app for production to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -27,7 +32,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `npm run eject` or `yarn eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
