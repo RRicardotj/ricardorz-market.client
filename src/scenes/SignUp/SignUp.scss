@@ -1,0 +1,139 @@
+@import '../../resources/styles/_variables.scss';
+
+.SignUp {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top right, $primaryColor, $secondaryColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  
+
+  .ant-input {
+    &:hover {
+      border-color: $primaryColor;
+    }
+  }
+
+  &__form {
+    width: 75%;
+    height: 85%;
+    background-color: $primaryColor;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    min-height: 300px;
+
+    &--inputs {
+      width: 95%;
+      margin: auto;
+
+      &-action-submit {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 2.5rem;
+
+        .ant-btn {
+          width: 95%;
+        }
+      }
+
+      &-action-back {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 5.5rem;
+      }
+
+      .ant-btn {
+        background-color: white !important;
+        border-color: $primaryColor !important;
+        color: $primaryColor;
+        font-weight: 400 !important;
+        font-size: 1.2rem;
+
+        &:hover {
+          background-color: $primaryColor !important;
+          border-color: $lightenPrimaryColor !important;
+          color: $lightenPrimaryColor;
+        }
+      }
+
+      .ant-input-search-button .ant-input-affix-wrapper {
+        &:hover {
+          background-color: $primaryColor !important;
+          border-color: $lightenPrimaryColor !important;
+          color: $lightenPrimaryColor;
+        }
+      }
+    }
+  }
+
+  &__part {
+    // width: 50%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    transition: all .8s;
+
+    @media (max-width: 650px) {
+      width: 100%;
+    }
+
+    &--left {
+      flex: 5;
+      background-color: $primaryColor;
+      opacity: .9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      @media (max-width: 650px) {
+        display: none;
+      }
+    }
+
+    &--right {
+      background-color: #ffff;
+      flex: 7;
+      overflow: scroll;
+
+      .ant-form.ant-form-horizontal {
+        text-align: center;
+      }
+    }
+
+    &__title {
+      width: 100%;
+      background-color: $darkGrayColorTransparent;
+      color: $lightenPrimaryColor;
+      text-transform: uppercase;
+      text-align: center;
+
+      /*backface-visibility: hidden; */
+      margin-bottom: .1rem;
+      font-weight: 200;
+
+      &--main {
+        display: block;
+        font-size: 1.5rem;
+        letter-spacing: 0.59rem;
+      }
+
+      &--sub {
+        display: block;
+        font-size: 1rem;
+        letter-spacing: 1.56rem;
+      }
+    }
+
+    &__input {
+      :hover {
+        border-color: $primaryColor !important;
+      }
+    }
+
+  }
+}

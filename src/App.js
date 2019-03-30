@@ -6,7 +6,7 @@ import Toolkit from 'utils/Toolkit';
 import Loading from 'components/Loading';
 
 // Services
-import CostumerService from 'services/CostumerService';
+import CostumerService from 'services/CustomerService';
 
 // Styles
 import './App.scss';
@@ -38,7 +38,6 @@ class App extends Component {
     if (this.state.hasToken === undefined) {
       CostumerService.check()
         .then((response) => {
-          console.log(response.data);
           this.setState({ hasToken: response.data.isValid });
           Toolkit.registerDialog(this.alertDialog);
         });

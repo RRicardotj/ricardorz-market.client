@@ -10,4 +10,8 @@ export default {
   check() {
     return Http.get(`${endpoint}/check`);
   },
+
+  signUp(data) {
+    return Http.post(`${endpoint}/signup`, data);
+  },
 };

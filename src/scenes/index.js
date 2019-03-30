@@ -4,11 +4,12 @@ import GlobalContext from 'Context/GlobalContext';
 import Main from './Main';
 import CategorySearch from './CategorySearch';
 import ProductSearch from './ProductSearch';
+import SignUp from './SignUp';
 
 
 const ProductDetail = () => (<div><h1>ProductDetail</h1></div>);
 
-const SignUp = () => (<div><h1>Register</h1></div>);
+// const SignUp = () => (<div><h1>Register</h1></div>);
 
 const SignIn = () => (<div><h1>Login</h1></div>);
 

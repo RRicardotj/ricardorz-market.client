@@ -62,6 +62,11 @@ export default class GlobalContext extends Component {
   }
 
   clearContex = ({ shoppingCart, cartId, isAuthenticated }) => {
+    if (!cartId) {
+      localStorage.removeItem('cartId', cartId);
+    } else {
+      localStorage.setItem('cartId', cartId);
+    }
     this.setState({ shoppingCart, cartId, isAuthenticated });
   }
 
