@@ -44,7 +44,7 @@ class Header extends Component {
   render() {
     return (
       <CartContext.Consumer>
-        { ({ shoppingCart }) => (
+        { ({ shoppingCart, isAuthenticated }) => (
           <div
             className="Header"
           >
@@ -76,7 +76,7 @@ class Header extends Component {
                 </Link>
                 <Button
                 // style={antButtonStyles}
-                  disabled={this.state.isAuthenticated}
+                  disabled={isAuthenticated}
                   onClick={this.goToSignUp}
                 >
                   <span>Sign Up</span>
@@ -84,7 +84,7 @@ class Header extends Component {
                 <Button onClick={this.goToSignIn}>
                   <span>
                     {
-                    this.state.isAuthenticated ? 'Logout' : 'Sign In'
+                    isAuthenticated ? 'Logout' : 'Sign In'
                   }
                   </span>
                 </Button>

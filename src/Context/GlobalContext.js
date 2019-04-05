@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import CartContext from './CartContext';
 
+// Services
+import CostumerService from 'services/CustomerService';
 import CartService from 'services/CartService';
 /*
   cartItem example = {
@@ -35,6 +37,26 @@ export default class GlobalContext extends Component {
           this.setCart(shoppingCart, cartId);
         }).catch(() => {
           this.clearContex({ shoppingCart: [], cartId: null });
+        });
+    }
+
+    if (localStorage.token) {
+      CostumerService.check()
+        .then(({ data }) => {
+          console.log('validate token', data.isValid);
+          if (!data.isValid) {
+            localStorage.removeItem('token');
+          }
+
+          this.props.authenticate(data.isValid);
+          this.setState({
+            cartId: data.cartId, shoppingCart: data.shoppingCart, isAuthenticated: data.isValid,
+          });
+        })
+        .catch(() => {
+          console.log('Invalid token');
+          localStorage.removeItem('token');
+          this.props.authenticate(false);
         });
     }
   }

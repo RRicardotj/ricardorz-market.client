@@ -23,9 +23,9 @@ const SignIn = () => (<div><h1>Login</h1></div>);
 const ShopingCart = () => (<div><h1>ShopingCart</h1></div>);
 
 
-const Scenes = () =>
+const Scenes = props =>
   (
-    <GlobalContext>
+    <GlobalContext authenticate={props.authenticate} isAuthenticated={props.isAuthenticated}>
       <Router>
         <Switch>
           <Route path="/search" component={ProductSearch} exact />

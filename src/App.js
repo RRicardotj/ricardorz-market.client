@@ -40,7 +40,8 @@ class App extends Component {
         .then((response) => {
           this.setState({ hasToken: response.data.isValid });
           Toolkit.registerDialog(this.alertDialog);
-        });
+        })
+        .catch(() => (localStorage.clear()));
     }
   }
 
@@ -59,7 +60,7 @@ class App extends Component {
       );
     }
     return (
-      <Scenes isAuthenticated={this.state.isAuthenticated} />
+      <Scenes isAuthenticated={this.state.hasToken} authenticate={this.isAuthenticated} />
     );
   }
 }
