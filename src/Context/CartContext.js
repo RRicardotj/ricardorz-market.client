@@ -7,4 +7,6 @@ export default React.createContext({
   addToCart: () => {},
   setCart: () => {},
   removeFromCart: () => {},
+  logout: () => {},
+  signIn: () => {},
 });

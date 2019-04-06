@@ -70,6 +70,29 @@ export default class GlobalContext extends Component {
     this.setState({ shoppingCart, cartId });
   }
 
+  logout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('cartId');
+    this.props.authenticate(false);
+    this.setState({
+      shoppingCart: [],
+      cartId: null,
+      isAuthenticated: false,
+    });
+  }
+
+  signIn = ({ token, shoppingCart, cartId }) => {
+    console.log(token, shoppingCart, cartId);
+    localStorage.setItem('token', token);
+    localStorage.setItem('cartId', cartId);
+    this.props.authenticate(true);
+    this.setState({
+      shoppingCart,
+      cartId,
+      isAuthenticated: true,
+    });
+  }
+
   addToCart = (product, { quantity, attributes }) => {
     CartService.addProduct(product, { quantity, attributes }, this.state.cartId)
       .then(({ data }) => {
@@ -103,6 +126,8 @@ export default class GlobalContext extends Component {
           addToCart: this.addToCart,
           setCart: this.setCart,
           removeFromCart: this.removeFromCart,
+          logout: this.logout,
+          signIn: this.signIn,
         }}
       >
         {this.props.children}

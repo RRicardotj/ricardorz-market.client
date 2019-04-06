@@ -61,14 +61,14 @@
       .ant-btn {
         background-color: $lightenPrimaryColor !important;
         border-color: $lightenPrimaryColor !important;
-        color: $primaryColor;
+        color: $primaryColor !important;
         font-weight: 400 !important;
         font-size: 1.2rem;
 
         &:hover {
           background-color: $primaryColor !important;
           border-color: $lightenPrimaryColor !important;
-          color: $lightenPrimaryColor;
+          color: $lightenPrimaryColor !important;
         }
       }
 

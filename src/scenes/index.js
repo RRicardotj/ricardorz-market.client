@@ -6,6 +6,7 @@ import Main from './Main';
 import CategorySearch from './CategorySearch';
 import ProductSearch from './ProductSearch';
 import SignUp from './SignUp';
+import SignIn from './SignIn';
 
 
 const ProductDetail = () => (<div><h1>ProductDetail</h1></div>);
@@ -18,7 +19,6 @@ const Activated = (props) => {
   return <Redirect to="/" />;
 };
 
-const SignIn = () => (<div><h1>Login</h1></div>);
 
 const ShopingCart = () => (<div><h1>ShopingCart</h1></div>);
 

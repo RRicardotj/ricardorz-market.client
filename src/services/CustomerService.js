@@ -14,4 +14,8 @@ export default {
   signUp(data) {
     return Http.post(`${endpoint}/signup`, data);
   },
+
+  signIn(data) {
+    return Http.post(`${endpoint}/signin`, data);
+  },
 };
