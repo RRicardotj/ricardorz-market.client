@@ -5,6 +5,7 @@ import GlobalContext from 'Context/GlobalContext';
 import Main from './Main';
 import CategorySearch from './CategorySearch';
 import ProductSearch from './ProductSearch';
+import ShoppingCart from './ShoppingCart';
 import SignUp from './SignUp';
 import SignIn from './SignIn';
 
@@ -20,9 +21,6 @@ const Activated = (props) => {
 };
 
 
-const ShopingCart = () => (<div><h1>ShopingCart</h1></div>);
-
-
 const Scenes = props =>
   (
     <GlobalContext authenticate={props.authenticate} isAuthenticated={props.isAuthenticated}>
@@ -34,7 +32,7 @@ const Scenes = props =>
           <Route path="/product" component={ProductDetail} exact />
           <Route path="/signup" component={SignUp} exact />
           <Route path="/signin" component={SignIn} exact />
-          <Route path="/cart" component={ShopingCart} exact />
+          <Route path="/cart" component={ShoppingCart} exact />
           <Route path="/activated" component={Activated} />
           <Route path="/" component={Main} />
         </Switch>

@@ -1,0 +1,44 @@
+@import '../../../resources/styles/_variables.scss';
+
+.ShoppingCart__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $primaryColor;
+
+  &--top {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    width: 95%;
+    display: flex;
+    justify-content: flex-end;
+
+    .ant-btn {
+      background-color: $lightenPrimaryColor !important;
+      border-color: $lightenPrimaryColor !important;
+      color: $primaryColor;
+      font-weight: 400 !important;
+      font-size: 1.2rem;
+      margin-left: 1.5rem;
+  
+      &:hover {
+        background-color: $primaryColor !important;
+        border-color: $lightenPrimaryColor !important;
+        color: $lightenPrimaryColor;
+      }
+    }
+  }
+
+  &--search {
+    width: 40%;
+  }
+
+  &--bottom {
+    height: 35%;
+
+    @media (max-width: 400px) {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.ShoppingCart {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(245, 249, 252);
+  overflow: scroll;
+
+  &--content {
+    .ant-list-header, .ant-list-footer, .ant-list-item {
+      background-color: white;
+    }
+  }
+
+  &--title {
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    
+    span {
+      font-size: 1.5rem;
+      font-weight: 100;
+    }
+  }
+}
