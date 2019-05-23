@@ -5,6 +5,8 @@ import CartContext from './CartContext';
 // Services
 import CostumerService from 'services/CustomerService';
 import CartService from 'services/CartService';
+import ShoppingCartService from 'services/ShoppingCartService';
+
 /*
   cartItem example = {
     item_id,
@@ -43,7 +45,6 @@ export default class GlobalContext extends Component {
     if (localStorage.token) {
       CostumerService.check()
         .then(({ data }) => {
-          console.log('validate token', data.isValid);
           if (!data.isValid) {
             localStorage.removeItem('token');
           }
@@ -54,7 +55,6 @@ export default class GlobalContext extends Component {
           });
         })
         .catch(() => {
-          console.log('Invalid token');
           localStorage.removeItem('token');
           this.props.authenticate(false);
         });
@@ -82,7 +82,6 @@ export default class GlobalContext extends Component {
   }
 
   signIn = ({ token, shoppingCart, cartId }) => {
-    console.log(token, shoppingCart, cartId);
     localStorage.setItem('token', token);
     localStorage.setItem('cartId', cartId);
     this.props.authenticate(true);
@@ -115,8 +114,22 @@ export default class GlobalContext extends Component {
     this.setState({ shoppingCart, cartId, isAuthenticated });
   }
 
+  updateShoppingCartProduct = (itemId, { quantity, color, size }) => {
+    ShoppingCartService.update(itemId, {
+      quantity, color, size,
+    }, this.state.cartId)
+      .then(({ data }) => {
+        console.log(data);
+      })
+      .catch(() => {
+        const { shoppingCart } = this.state;
+
+        this.setCart([], this.state.cartId);
+        this.setCart(shoppingCart, this.state.cartId);
+      });
+  }
+
   render() {
-    console.log('Render gContext', this.state.shoppingCart);
     return (
       <CartContext.Provider
         value={{
@@ -128,6 +141,7 @@ export default class GlobalContext extends Component {
           removeFromCart: this.removeFromCart,
           logout: this.logout,
           signIn: this.signIn,
+          updateShoppingCartProduct: this.updateShoppingCartProduct,
         }}
       >
         {this.props.children}

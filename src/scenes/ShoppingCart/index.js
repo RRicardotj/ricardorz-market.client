@@ -10,10 +10,6 @@ import './ShoppingCart.scss';
 class ShoppingCart extends Component {
   static contextType = CartContext;
 
-  payAll = () => {
-    console.log('payAll');
-  }
-
   price = () => {
     let { total } = this.context.shoppingCart.reduce((prev, current) => {
       let { price, discountedPrice } = current.product;
@@ -28,38 +24,61 @@ class ShoppingCart extends Component {
     return `$ ${total}`;
   }
 
-  componentDidMount() {
-    this.setProducts(this.context.shoppingCart);
+  payAll = () => (console.log('payAll'));
+
+  updateQuantity = (itemId, value) => {
+    console.log('Change quantity for', itemId, value);
+    this.context.updateShoppingCartProduct(itemId, { quantity: value });
   }
 
-  setProducts = (products) => {
-    this.setState(products);
-  };
+  updateColor = (itemId, attributeValueId) => {
+    console.log('Change color for', itemId, attributeValueId);
+    this.context.updateShoppingCartProduct(itemId, { color: attributeValueId });
+  }
+
+  updateSize = (itemId, attributeValueId) => {
+    console.log('Change size for', itemId, attributeValueId);
+    this.context.updateShoppingCartProduct(itemId, { size: attributeValueId });
+  }
 
   render() {
     return (
-      <div className="ShoppingCart">
-        <Header payAll={this.payAll} />
-        <div className="ShoppingCart--content">
-          <List
-            size="large"
-            header={
-              <div className="ShoppingCart--title">
-                <span>{this.context.shoppingCart.length} Items in shopping cart</span>
-                <span>{this.context.shoppingCart.length && this.price()}</span>
+      <CartContext.Consumer>
+        {({ shoppingCart }) => (
+          (
+            <div className="ShoppingCart">
+              <Header payAll={this.payAll} />
+              <div className="ShoppingCart--content">
+                <List
+                  size="large"
+                  header={
+                    <div className="ShoppingCart--title">
+                      <span>{shoppingCart.length} Items in shopping cart</span>
+                      <span>{shoppingCart.length && this.price()}</span>
+                    </div>
+                  }
+                  footer={
+                    <div className="ShoppingCart--title">
+                      <span>{shoppingCart.length} Items in shopping cart</span>
+                    </div>
+                  }
+                  bordered
+                  dataSource={shoppingCart}
+                  renderItem={item => (
+                    <List.Item key={item.itemId} >
+                      <Product
+                        item={item}
+                        onUpdateQuantity={this.updateQuantity}
+                        onUpdateColor={this.updateColor}
+                        onUpdateSize={this.updateSize}
+                      />
+                    </List.Item>)}
+                />
               </div>
-            }
-            footer={
-              <div className="ShoppingCart--title">
-                <span>{this.context.shoppingCart.length} Items in shopping cart</span>
-              </div>
-            }
-            bordered
-            dataSource={this.context.shoppingCart}
-            renderItem={item => (<List.Item key={item.itemId} ><Product item={item} /></List.Item>)}
-          />
-        </div>
-      </div>
+            </div>
+          )
+        )}
+      </CartContext.Consumer>
     );
   }
 }

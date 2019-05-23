@@ -9,4 +9,5 @@ export default React.createContext({
   removeFromCart: () => {},
   logout: () => {},
   signIn: () => {},
+  updateShoppingCartProduct: () => {},
 });

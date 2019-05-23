@@ -32,8 +32,13 @@
       }
       
       &--detail {
+        margin-bottom: 1.5rem;
         span {
           font-weight: bold;
+          margin-right: .5rem;
+        }
+
+        button {
           margin-right: .5rem;
         }
 
