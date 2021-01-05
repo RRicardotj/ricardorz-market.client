@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^3.9.4",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "classnames": "^2.2.5",
     "es6-promise": "^4.2.4",
     "eslint-friendly-formatter": "^4.0.1",
